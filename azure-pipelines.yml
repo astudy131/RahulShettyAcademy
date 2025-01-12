@@ -27,7 +27,8 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'docker_azure_integration'
-    repository: 'gowtham'
+    repository: 'astudy131/gowtham'
     command: 'buildAndPush'
     Dockerfile: '**/AzureDockerfile'
+
 
