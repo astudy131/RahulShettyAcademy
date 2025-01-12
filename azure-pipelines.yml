@@ -24,7 +24,10 @@ steps:
   inputs:
     containerRegistry: 'docker_azure_integration'
     command: 'login'
-- task: CopyFiles@2
+- task: Docker@2
   inputs:
-    Contents: '**/*.war'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    containerRegistry: 'docker_azure_integration'
+    repository: 'gowtham'
+    command: 'buildAndPush'
+    Dockerfile: '**/AzureDockerfile'
+
